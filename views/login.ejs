@@ -1,0 +1,23 @@
+<%- include ('partials/header')  %>
+<%-include('partials/nav')  %> 
+
+<form action="/login" method="post">
+   <% if(error){%>
+   <p ><%= errorMessage  %>  </p> 
+   <input type="text" name="email"  id="" value="<%= email  %>" required >
+   <input type="password" name="password"  id="" value="<%= password  %>" required > 
+   
+   <% } else{ %>  
+      
+   <label for="email"> email</label>
+   <input type="text" name="email" id="" required>
+   <label for="Password">password</label>
+   <input type="password" name="password" id="" required>
+
+      <% } %> 
+
+   <input type="submit" value="login">
+   <span>Don't have an account</span> <a href="/signup">Sign up </a>
+</form>
+
+<%- include('partials/footer')  %> 
